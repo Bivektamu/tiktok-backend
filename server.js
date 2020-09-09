@@ -7,7 +7,7 @@ const Videos = require('./dbModel.js');
 
 // app configuration
 const app = express();
-const port = 9000;
+const port = process.env.port || 9000;
 
 // middleware
 app.use(express.json());
@@ -28,7 +28,7 @@ mongoose.connect(connection_url, {
 
 
 // api endpoints
-app.get('/', (req, res) => res.status(200).send('hello world'));
+// app.get('/', (req, res) => res.status(200).send('hello world'));
 
 // app.get('/posts', (req, res) => res.status(200).send(Data));
 app.post('/posts', (req, res) => {
