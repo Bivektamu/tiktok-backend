@@ -7,13 +7,13 @@ const Videos = require('./dbModel.js');
 
 // app configuration
 const app = express();
-const port = process.env.port || 9000;
+const port = process.env.PORT || 9000;
 
 // middleware
 app.use(express.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'),
-        res.setHeader('Access-Control-Allow-Header', '*'),
+        res.setHeader('Access-Control-Allow-Headers', '*'),
         next();
 });
 
